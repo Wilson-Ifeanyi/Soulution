@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 
 <style>
 
@@ -344,6 +344,563 @@ display:none;
 
 }
 
+/* Editorial visual system */
+:root{
+--cream:#f8f6f1;
+--beige:#ece5da;
+--sage:#52685d;
+--gold:#a96046;
+--text:#282722;
+--white:#fffefa;
+--muted:#716d64;
+}
+
+html{
+scroll-behavior:smooth;
+scroll-padding-top:90px;
+}
+
+body{
+font-family:"DM Sans",sans-serif;
+line-height:1.75;
+}
+
+h1,h2,h3,.logo{
+font-family:"Cormorant Garamond",serif;
+}
+
+h1,h2{
+letter-spacing:-.035em;
+}
+
+.container{
+width:min(88%,1280px);
+}
+
+nav{
+background:rgba(248,246,241,.94);
+border-bottom:1px solid rgba(40,39,34,.09);
+}
+
+.nav-inner{
+min-height:84px;
+padding:14px 0;
+gap:24px;
+}
+
+.logo{
+font-size:1.7rem;
+letter-spacing:.015em;
+}
+
+.nav-links{
+gap:clamp(18px,3vw,42px);
+font-size:.87rem;
+}
+
+.nav-links a,
+.retailer{
+transition:color .2s ease;
+}
+
+.nav-links a:hover,
+.nav-links a:focus-visible{
+color:var(--gold);
+}
+
+.nav-button,
+.cta-btn{
+background:var(--sage);
+border:1px solid var(--sage);
+border-radius:2px;
+color:var(--white);
+font:500 .9rem "DM Sans",sans-serif;
+letter-spacing:.035em;
+padding:14px 25px;
+transition:background .2s ease,color .2s ease;
+}
+
+.nav-button:hover,
+.cta-btn:hover{
+background:transparent;
+color:var(--sage);
+}
+
+.hero{
+padding:clamp(64px,9vw,126px) 0 clamp(56px,8vw,110px);
+}
+
+.hero-grid{
+grid-template-columns:1.02fr .98fr;
+gap:clamp(44px,8vw,116px);
+}
+
+.hero-label{
+color:var(--gold);
+font-size:.73rem;
+letter-spacing:.18em;
+margin-bottom:23px;
+}
+
+.hero h1{
+font-size:clamp(3.35rem,6.1vw,6.15rem);
+font-weight:500;
+line-height:.96;
+margin-bottom:25px;
+max-width:690px;
+}
+
+.hero-author{
+color:var(--sage);
+font-size:.96rem;
+font-weight:500;
+letter-spacing:.02em;
+margin-bottom:18px;
+}
+
+.hero p{
+color:var(--muted);
+font-size:1.04rem;
+max-width:510px;
+margin-bottom:32px;
+}
+
+.hero-image{
+height:clamp(440px,54vw,680px);
+position:relative;
+border-radius:2px;
+background:
+radial-gradient(ellipse at 68% 32%,rgba(255,244,218,.8) 0 11%,transparent 11.5%),
+radial-gradient(ellipse at 66% 33%,rgba(169,96,70,.36) 0 27%,transparent 27.5%),
+linear-gradient(145deg,#d9c6ae 3%,#b5a28d 48%,#718075 100%);
+}
+
+.hero-image::before{
+content:"";
+position:absolute;
+inset:20px;
+border:1px solid rgba(255,254,250,.7);
+}
+
+.hero-image::after{
+content:"";
+position:absolute;
+width:58%;
+height:65%;
+right:9%;
+bottom:0;
+background:linear-gradient(150deg,rgba(248,246,241,.05),rgba(40,39,34,.25));
+clip-path:ellipse(47% 50% at 50% 50%);
+}
+
+.hero-art-copy{
+position:absolute;
+z-index:1;
+left:9%;
+bottom:11%;
+color:var(--white);
+}
+
+.hero-art-copy span{
+font-family:"Cormorant Garamond",serif;
+font-size:clamp(2.4rem,4vw,4.2rem);
+line-height:1;
+}
+
+.hero-art-copy p{
+color:rgba(255,254,250,.88);
+font-size:.8rem;
+letter-spacing:.08em;
+margin:9px 0 0;
+text-transform:uppercase;
+}
+
+.image-note{
+position:absolute;
+right:9%;
+top:8%;
+z-index:1;
+color:rgba(255,254,250,.92);
+font-size:.67rem;
+letter-spacing:.16em;
+text-transform:uppercase;
+writing-mode:vertical-rl;
+}
+
+.retailers{
+background:var(--white);
+border-block:1px solid rgba(40,39,34,.08);
+padding:27px 0;
+}
+
+.retailers-grid{
+align-items:center;
+gap:clamp(20px,4vw,62px);
+}
+
+.retailer{
+border:0;
+border-radius:0;
+background:none;
+color:var(--muted);
+font-family:"Cormorant Garamond",serif;
+font-size:1.25rem;
+padding:4px;
+}
+
+.section{
+padding:clamp(78px,11vw,150px) 0;
+}
+
+.two-col{
+grid-template-columns:1.08fr .92fr;
+gap:clamp(50px,9vw,130px);
+}
+
+.section h2{
+font-size:clamp(2.7rem,4.6vw,4.65rem);
+font-weight:500;
+line-height:1.02;
+margin-bottom:24px;
+max-width:760px;
+}
+
+.section p{
+color:var(--muted);
+max-width:640px;
+}
+
+.features{
+gap:0 28px;
+margin-top:42px;
+}
+
+.feature-card{
+position:relative;
+background:transparent;
+border-top:1px solid rgba(40,39,34,.2);
+border-radius:0;
+box-shadow:none;
+min-height:106px;
+padding:21px 8px 20px 34px;
+}
+
+.feature-card::before{
+content:"✳";
+position:absolute;
+left:2px;
+top:19px;
+color:var(--gold);
+font-size:.9rem;
+}
+
+.feature-card h3{
+font-size:1.28rem;
+font-weight:500;
+line-height:1.2;
+}
+
+.book-cover{
+min-height:500px;
+height:auto;
+border-radius:2px;
+background:#d9cbb9;
+padding:10% 12%;
+}
+
+.book-cover-art{
+width:min(100%,360px);
+min-height:440px;
+display:flex;
+flex-direction:column;
+justify-content:space-between;
+padding:clamp(28px,5vw,54px);
+background:linear-gradient(155deg,#31463d,#52685d 62%,#7d8977);
+box-shadow:14px 18px 30px rgba(40,39,34,.18);
+color:var(--white);
+text-align:center;
+}
+
+.book-cover-art span:first-child{
+font-family:"Cormorant Garamond",serif;
+font-size:1.45rem;
+letter-spacing:.14em;
+text-transform:uppercase;
+}
+
+.book-cover-art p{
+color:var(--white);
+font-family:"Cormorant Garamond",serif;
+font-size:clamp(1.75rem,3vw,2.7rem);
+line-height:1.02;
+}
+
+.book-cover-art span:last-child{
+font-size:.7rem;
+letter-spacing:.16em;
+text-transform:uppercase;
+}
+
+.cards{
+grid-template-columns:repeat(3,1fr);
+gap:0 30px;
+margin-top:52px;
+}
+
+.card{
+background:transparent;
+border-top:1px solid rgba(40,39,34,.2);
+border-radius:0;
+box-shadow:none;
+font-family:"Cormorant Garamond",serif;
+font-size:1.45rem;
+padding:24px 4px 28px;
+}
+
+.preorder{
+background:#eee7dd;
+}
+
+.preorder .container > p{
+margin-top:-8px;
+}
+
+.form{
+max-width:780px;
+background:var(--white);
+border-radius:2px;
+margin-top:48px;
+padding:clamp(28px,5vw,54px);
+}
+
+.form h3{
+font-size:1.8rem;
+font-weight:500;
+margin-bottom:22px;
+}
+
+input,select{
+background:transparent;
+border:0;
+border-bottom:1px solid #d5cec2;
+border-radius:0;
+font:400 .95rem "DM Sans",sans-serif;
+margin-bottom:20px;
+padding:14px 4px;
+}
+
+input:focus,select:focus{
+outline:2px solid var(--sage);
+outline-offset:2px;
+}
+
+#book-club{
+background:var(--sage);
+color:var(--white);
+}
+
+#book-club p{
+color:rgba(255,254,250,.82);
+}
+
+#book-club .cta-btn{
+background:var(--white);
+border-color:var(--white);
+color:var(--sage);
+margin-top:18px;
+}
+
+#book-club .cta-btn:hover{
+background:transparent;
+color:var(--white);
+}
+
+.author{
+grid-template-columns:.94fr 1.06fr;
+gap:clamp(48px,8vw,110px);
+}
+
+.author-image{
+height:clamp(390px,48vw,620px);
+position:relative;
+border-radius:2px;
+background:
+radial-gradient(ellipse at 54% 37%,rgba(255,244,218,.8) 0 13%,transparent 13.5%),
+radial-gradient(ellipse at 53% 37%,rgba(169,96,70,.38) 0 30%,transparent 30.5%),
+linear-gradient(145deg,#d9c6ae,#879184 92%);
+}
+
+.author-image::after{
+content:"Stephanie Okafor";
+position:absolute;
+left:8%;
+bottom:8%;
+color:var(--white);
+font-family:"Cormorant Garamond",serif;
+font-size:clamp(2rem,4vw,3.8rem);
+}
+
+.author h2{
+font-size:clamp(2.7rem,4.6vw,4.5rem);
+}
+
+.modal{
+padding:20px;
+}
+
+.modal-content{
+border-radius:2px;
+padding:clamp(28px,5vw,48px);
+}
+
+.modal-content h3{
+font-size:2rem;
+font-weight:500;
+}
+
+.retailer-links a{
+border-radius:0;
+border-bottom:1px solid #e3ddd3;
+background:transparent;
+padding:13px 4px;
+}
+
+.mobile-menu{
+display:none;
+}
+
+@media(max-width:768px){
+.container{
+width:min(88%,620px);
+}
+
+.nav-inner{
+min-height:72px;
+gap:12px;
+}
+
+.nav-links{
+display:none;
+}
+
+.mobile-menu{
+display:block;
+position:relative;
+margin-left:auto;
+}
+
+.mobile-menu summary{
+cursor:pointer;
+font-size:.82rem;
+list-style:none;
+padding:10px 4px;
+}
+
+.mobile-menu summary::-webkit-details-marker{
+display:none;
+}
+
+.mobile-menu summary::after{
+content:" +";
+color:var(--gold);
+}
+
+.mobile-menu[open] .nav-links{
+position:absolute;
+right:0;
+top:42px;
+z-index:10;
+display:grid;
+gap:0;
+width:220px;
+padding:10px 20px;
+background:var(--white);
+box-shadow:0 12px 30px rgba(40,39,34,.12);
+}
+
+.mobile-menu .nav-links a{
+padding:10px 0;
+}
+
+.nav-button{
+padding:11px 15px;
+font-size:.8rem;
+}
+
+.hero-grid,
+.two-col,
+.author{
+grid-template-columns:1fr;
+gap:42px;
+}
+
+.hero{
+padding-top:60px;
+}
+
+.hero h1{
+font-size:clamp(3.1rem,12vw,4.7rem);
+}
+
+.hero-image{
+height:min(118vw,540px);
+}
+
+.retailers-grid{
+gap:10px 24px;
+}
+
+.retailer{
+font-size:1.08rem;
+}
+
+.features{
+grid-template-columns:1fr 1fr;
+}
+
+.book-cover{
+min-height:440px;
+padding:28px;
+}
+
+.book-cover-art{
+min-height:390px;
+}
+
+.cards{
+grid-template-columns:1fr 1fr;
+gap:0 20px;
+}
+
+.author-image{
+height:min(105vw,500px);
+}
+}
+
+@media(max-width:420px){
+.logo{
+font-size:1.45rem;
+}
+
+.features,.cards{
+grid-template-columns:1fr;
+}
+
+.nav-button{
+padding:10px 12px;
+}
+}
+
+@media(prefers-reduced-motion:reduce){
+html{
+scroll-behavior:auto;
+}
+
+*,*::before,*::after{
+transition-duration:.01ms!important;
+}
+}
+
 </style>
 </head>
 
@@ -359,6 +916,15 @@ display:none;
 <a href="#book-club">Book Club</a>
 <a href="#author">About Stephanie</a>
 </div>
+
+<details class="mobile-menu">
+<summary>Explore</summary>
+<div class="nav-links">
+<a href="#about-book">About the Book</a>
+<a href="#book-club">Book Club</a>
+<a href="#author">About Stephanie</a>
+</div>
+</details>
 
 <button class="nav-button" onclick="openModal()">
 Preorder
@@ -396,7 +962,11 @@ Preorder Now
 </div>
 
 <div class="hero-image">
-PHOTO 1
+<div class="hero-art-copy">
+<span>SOULution</span>
+<p>Healing &amp; wholeness</p>
+</div>
+<span class="image-note">A journey inward</span>
 </div>
 
 </div>
@@ -458,7 +1028,11 @@ A transformative guide to healing the wounds of the soul, overcoming emotional s
 </div>
 
 <div class="book-cover">
-BOOK COVER
+<div class="book-cover-art">
+<span>SOULution</span>
+<p>Heal Your Soul<br>and Everything Else<br>Will Thrive</p>
+<span>Stephanie Okafor</span>
+</div>
 </div>
 
 </div>
@@ -560,7 +1134,6 @@ Register Your Book Club
 <div class="container author">
 
 <div class="author-image">
-PHOTO 2
 </div>
 
 <div>
